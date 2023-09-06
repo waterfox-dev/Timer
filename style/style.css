@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+body
+{
+    background-color: #131313;
+    font-family: 'Fira Code', monospace;
+    color: #DEDEDE;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 45px;
+}
+
+#timer
+{
+    margin-top: 10%;
+    text-align: center;
+}
+
+#timerCircle
+{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border-style: solid;
+    margin: auto;
+}
+
+#timerTime
+{
+    margin-top: 42%;
+    font-size: 40px;
+}
+
+#timerSetting
+{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#timerSetting > .timeButton
+{
+    background-color:#131313;
+    border-style: solid;
+    border-width: 0.5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1.2%;
+    padding-top: 1.2%;
+    color: #DEDEDE;
+    font-family: 'Fira Code', monospace;
+    font-size: 20px;
+    border-radius: 1.2em;
+    cursor: pointer;
+    
+}
+
+
+#timerSetting > .playButton
+{
+    background-color:#131313;
+    border-style: solid;
+    border-width: 0.5px;
+    height: 100px;
+    width: 100px;
+    color: #DEDEDE;
+    font-family: 'Fira Code', monospace;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
