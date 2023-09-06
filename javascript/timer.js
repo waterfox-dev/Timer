@@ -1,10 +1,14 @@
 //---Document element reference---
 let timerTime = document.getElementById('timerTime'); 
-let playButton = document.getElementById('playButton')
+let playButton = document.getElementById('playButton'); 
+let workingText = document.getElementById('working'); 
+let pausingText = document.getElementById('pausing')
 
 //---Internal variable---
 let second = 0;
-let state = 'paused'
+let state = 'paused';
+let workState = 'working';
+let run;
 
 //---Function---
 
@@ -41,12 +45,35 @@ function addSecond(addingSecond)
     second = second + addingSecond;
     if(second < 0)
     {
-        second = 0; 
+        if(workState == 'working')
+        {
+            pausingText.style.textDecoration = 'underline';
+            workingText.style.textDecoration = 'none';
+            workState = 'pausing';
+            setSecond(300);
+        }
+        else if(workState == 'pausing')
+        {            
+            pausingText.style.textDecoration = 'none';
+            workingText.style.textDecoration = 'underline';
+            workState = 'working';
+            setSecond(1500);
+        }
     }
     else
     {
         timerTime.innerHTML = secondToDuration(second);
     }
+}
+/**
+ * Set second to the counter
+ * @param {*} s second value
+ */
+function setSecond(s)
+{
+    second = s
+    timerTime.innerHTML = secondToDuration(second);
+
 }
 
 /**
@@ -55,32 +82,23 @@ function addSecond(addingSecond)
 function play()
 {
     playButton.innerHTML = "<i class='fa-solid fa-pause'></i>"
-    state = 'running'
+
 
     let run = setInterval(()=>{
         if(state == 'running')
         {
-            addSecond(-1);    
-        }
-        else
-        {
-            clearInterval(run);
+            addSecond(-1);
         }
     }, 1000);
 }
 
-/**
- * Pause the counter
- */
-function pause()
+function reset() 
 {
-    playButton.innerHTML = "<i class='fa-solid fa-play'></i></button>"
-    state = 'paused'
-}
-
-function updateBackground()
-{
-
+    clearInterval(run)
+    setSecond(1500);
+    workingText.style.textDecoration = 'underline';
+    pausingText.style.textDecoration = 'none';
+    playButton.innerHTML = "<i class='fa-solid fa-play'></i>"
 }
 
 //---Event Listener---
@@ -89,13 +107,15 @@ playButton.addEventListener('click', () =>
 {
     if(state == 'paused')
     {
+        state = 'running';
         play();
     }
     else
     {
-        pause();
+        state = 'paused';
+        reset()
     }
 })
 
 //---Running first automation---
-addSecond(1500)
+reset();
