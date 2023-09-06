@@ -1,7 +1,5 @@
 //---Document element reference---
 let timerTime = document.getElementById('timerTime'); 
-let removeButton = document.getElementById('removeButton'); 
-let addButton = document.getElementById('addButton');
 let playButton = document.getElementById('playButton')
 
 //---Internal variable---
@@ -86,15 +84,6 @@ function updateBackground()
 }
 
 //---Event Listener---
-removeButton.addEventListener('click', ()=>
-{
-    addSecond(-15);
-})
-
-addButton.addEventListener('click', ()=>
-{
-    addSecond(15);
-})
 
 playButton.addEventListener('click', () =>
 {
