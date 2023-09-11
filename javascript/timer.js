@@ -128,7 +128,7 @@ function reset()
     setSecond(workDuration);
     workingText.style.textDecoration = 'underline';
     pausingText.style.textDecoration = 'none';
-    playButton.innerHTML = "<i class='fa-solid fa-play'></i>"
+    playButton.innerHTML = "<p class='fa-solid fa-play'></p>"
 }
 
 //---Event Listener---
