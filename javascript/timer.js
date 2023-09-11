@@ -56,6 +56,7 @@ function addSecond(addingSecond)
             pausingText.style.textDecoration = 'underline';
             workingText.style.textDecoration = 'none';
             workState = 'pausing';
+            sendNotification('Pause time', `You are on break for the next ${pauseDuration/60} minutes`)
             setSecond(pauseDuration);
         }
         else if(workState == 'pausing')
@@ -63,6 +64,7 @@ function addSecond(addingSecond)
             pausingText.style.textDecoration = 'none';
             workingText.style.textDecoration = 'underline';
             workState = 'working';
+            sendNotification('Pause time', `You are on work for the next ${workDuration/60} minutes`)
             setSecond(workDuration);
         }
     }
@@ -84,6 +86,20 @@ function setSecond(s)
 }
 
 /**
+ * Send a notificationt to the client OS
+ * @param {*} title the title of the notification
+ * @param {*} text the text body of the notification
+ */
+function sendNotification(title, text)
+{
+    Notification.requestPermission().then(permissions => {
+        if(permissions === 'granted')
+        {
+            new Notification(title=title, {body:text})
+        }
+    });
+}
+/**
  * Launch the counter
  */
 function play()
@@ -96,7 +112,7 @@ function play()
         {
             addSecond(-1);
         }
-    }, 1000);
+    }, 10);
 }
 
 /**
