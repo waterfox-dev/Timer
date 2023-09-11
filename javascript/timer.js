@@ -146,12 +146,12 @@ configButton.addEventListener('click', () =>{
 //---Running first automation---
 if(localStorage.getItem('pomWorkDur'))
 {
-    workDuration = localStorage.getItem('pomWorkDur');
+    workDuration = parseInt(localStorage.getItem('pomWorkDur'));
 }
 
 if(localStorage.getItem('pomPauseDur')) 
 {
-    pauseDuration = localStorage.getItem('pomPauseDur');
+    pauseDuration = parseInt(localStorage.getItem('pomPauseDur'));
 }
 
 workInput.value = workDuration / 60;
