@@ -129,13 +129,13 @@ playButton.addEventListener('click', () =>
 
 workInput.addEventListener('change', (event) => {
     workDuration = event.target.value * 60;
-    sessionStorage.setItem('pomWorkDur', event.target.value * 60);
+    localStorage.setItem('pomWorkDur', event.target.value * 60);
     reset();
 });
 
 pauseInput.addEventListener('change', (event) => {
     pauseDuration = event.target.value * 60;
-    sessionStorage.setItem('pomPauseDur', event.target.value * 60);
+    localStorage.setItem('pomPauseDur', event.target.value * 60);
     reset();
 });
 
@@ -144,16 +144,14 @@ configButton.addEventListener('click', () =>{
 });
 
 //---Running first automation---
-console.log(sessionStorage);
-
-if(sessionStorage.getItem('pomWorkDur'))
+if(localStorage.getItem('pomWorkDur'))
 {
-    workDuration = sessionStorage.getItem('pomWorkDur');
+    workDuration = localStorage.getItem('pomWorkDur');
 }
 
-if(sessionStorage.getItem('pomPauseDur')) 
+if(localStorage.getItem('pomPauseDur')) 
 {
-    pauseDuration = sessionStorage.getItem('pomPauseDur');
+    pauseDuration = localStorage.getItem('pomPauseDur');
 }
 
 workInput.value = workDuration / 60;
