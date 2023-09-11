@@ -97,6 +97,10 @@ function sendNotification(title, text)
         {
             new Notification(title=title, {body:text})
         }
+        else
+        {
+            return null;
+        }
     });
 }
 /**
