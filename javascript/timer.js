@@ -20,19 +20,19 @@ let run;
 
 /**
  * Format a partial duration to a complete duration.
- * @param {*} string time string
- * @param {*} pad the completor
- * @param {*} length the lenght of the duration
+ * @param {string} inputString time string
+ * @param {string} pad the completor
+ * @param {int} length the lenght of the duration
  * @returns The new duration
  */
-function formatHour(string, pad, length) 
+function formatHour(inputString, pad, length) 
 {
-    return (new Array(length + 1).join(pad) + string).slice(-length);
+    return (new Array(length + 1).join(pad) + inputString).slice(-length);
 }
 
 /**
  * Render an amount of second to a complete text duration
- * @param {*} second the amout of second
+ * @param {int} second the amout of second
  * @returns the complete text
  */
 function secondToDuration(second)
