@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
         <title>Pomodoro Timer</title>
         <link rel="stylesheet" href="./style/style.css">
         <script src="https://kit.fontawesome.com/509547751b.js" crossorigin="anonymous"></script>
@@ -9,7 +10,7 @@
         <h1><b>Pomodoro Timer</b></h1>
         <div id="statut">
             <p id="working">Working</p>
-            <p>&nbsp·&nbsp</p>
+            <p>&nbsp;·&nbsp; </p>
             <p id="pausing">Pausing</p>
         </div>
         <div id="timer">
@@ -19,6 +20,18 @@
         </div>
         <div id="timerSetting">
             <button class="playButton" id="playButton"><i class="fa-solid fa-play"></i></button>
+            <br>
+            <button class="configButton" id="configButton">Config Timer</button>
+        </div>
+        <div id="timerConfig" hidden>
+            <div id="workConfig">
+                <label for="workInput">Working Time (min) : </label>
+                <input id="workInput" type="number" min="1">
+            </div>
+            <div id="pauseConfig">
+                <label for="pauseInput">Pausing Time (min) : </label>
+                <input id="pauseInput" type="number" min="1">
+            </div>
         </div>
         <script src="./javascript/timer.js"></script>
     </body>

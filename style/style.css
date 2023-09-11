@@ -26,7 +26,7 @@ h1
 
 #timer
 {
-    margin-top: 5%;
+    margin-top: 3%;
     text-align: center;
 }
 
@@ -48,7 +48,7 @@ h1
 #timerSetting
 {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 #timerSetting > .timeButton
@@ -81,5 +81,22 @@ h1
     font-size: 20px;
     border-radius: 50%;
     cursor: pointer;
-    
+}
+
+#timerSetting > .configButton
+{
+    margin-top: 2%;
+    font-size: 20px;
+    color: #DEDEDE;
+    background-color: #c42b2b;
+    border-width: 0.5px;
+    border-style: solid;
+    font-family: 'Fira Code', monospace;
+
+}
+
+#timerConfig
+{
+    margin-top: 2%;
+    text-align: center;
 }
