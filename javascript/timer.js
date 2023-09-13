@@ -6,7 +6,9 @@ let pausingText = document.getElementById('pausing');
 let workInput = document.getElementById('workInput'); 
 let pauseInput = document.getElementById('pauseInput');
 let configButton = document.getElementById('configButton');
-let timerConfig = document.getElementById('timerConfig')
+let timerConfig = document.getElementById('timerConfig');
+let sliderWorkLabel = document.getElementById('sliderWorkLabel'); 
+let sliderPauseLabel = document.getElementById('sliderPauseLabel');
 
 //---Internal variable---
 let second = 0;
@@ -55,6 +57,7 @@ function addSecond(addingSecond)
         {
             pausingText.style.textDecoration = 'underline';
             workingText.style.textDecoration = 'none';
+            document.body.style.backgroundColor  = '#00A36C';
             workState = 'pausing';
             sendNotification('Pause time', `You are on break for the next ${pauseDuration/60} minutes`)
             setSecond(pauseDuration);
@@ -63,6 +66,7 @@ function addSecond(addingSecond)
         {            
             pausingText.style.textDecoration = 'none';
             workingText.style.textDecoration = 'underline';
+            document.body.style.backgroundColor  = '#C15151';
             workState = 'working';
             sendNotification('Pause time', `You are on work for the next ${workDuration/60} minutes`)
             setSecond(workDuration);
@@ -82,7 +86,6 @@ function setSecond(s)
 {
     second = s
     timerTime.innerHTML = secondToDuration(second);
-
 }
 
 /**
@@ -116,7 +119,7 @@ function play()
         {
             addSecond(-1);
         }
-    }, 1000);
+    }, 10);
 }
 
 /**
@@ -126,6 +129,10 @@ function reset()
 {
     clearInterval(run)
     setSecond(workDuration);
+    
+    sliderWorkLabel.innerHTML = `Working Time (${workDuration / 60} min) : `;
+    sliderPauseLabel.innerHTML = `Working Time (${pauseDuration / 60} min) : `;
+
     workingText.style.textDecoration = 'underline';
     pausingText.style.textDecoration = 'none';
     playButton.innerHTML = "<p class='fa-solid fa-play'></p>"
@@ -167,11 +174,13 @@ configButton.addEventListener('click', () =>{
 if(localStorage.getItem('pomWorkDur'))
 {
     workDuration = parseInt(localStorage.getItem('pomWorkDur'));
+    sliderWorkLabel.innerHTML = `Working Time (${workDuration / 60} min) : `
 }
 
 if(localStorage.getItem('pomPauseDur')) 
 {
-    pauseDuration = parseInt(localStorage.getItem('pomPauseDur'));
+    
+    sliderPauseLabel.innerHTML = `Pausing Time (${pauseDuration / 60} min) : `
 }
 
 workInput.value = workDuration / 60;

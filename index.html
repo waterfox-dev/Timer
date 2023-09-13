@@ -24,13 +24,13 @@
                 <button class="configButton" id="configButton">Config Timer</button>
             </div>
             <div id="timerConfig" hidden>
-                <div id="workConfig">
-                    <label for="workInput">Working Time (min) : </label>
-                    <input id="workInput" class="timeConfig" type="number" min="1">
+                <div id="workConfig" class="configDiv">
+                    <label for="workInput" id="sliderWorkLabel">Working Time (min) : </label>
+                    <input id="workInput" class="timeConfig" type="range" min="1" max="180">
                 </div>
-                <div id="pauseConfig">
-                    <label for="pauseInput">Pausing Time (min) : </label>
-                    <input id="pauseInput" class="timeConfig" type="number" min="1">
+                <div id="pauseConfig" class="configDiv">
+                    <label for="pauseInput" id="sliderPauseLabel">Pausing Time (min) : </label>
+                    <input id="pauseInput" class="timeConfig" type="range" min="1" max="180">
                 </div>
             </div>
             <script src="./javascript/timer.js"></script>
