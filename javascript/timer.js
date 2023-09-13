@@ -119,7 +119,7 @@ function play()
         {
             addSecond(-1);
         }
-    }, 10);
+    }, 1000);
 }
 
 /**
