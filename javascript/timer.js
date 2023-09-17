@@ -57,7 +57,7 @@ function addSecond(addingSecond)
         {
             pausingText.style.textDecoration = 'underline';
             workingText.style.textDecoration = 'none';
-            document.body.style.backgroundColor  = '#00A36C';
+            document.body.style.backgroundColor  = '#BBA36C';
             workState = 'pausing';
             sendNotification('Pause time', `You are on break for the next ${pauseDuration/60} minutes`)
             setSecond(pauseDuration);
