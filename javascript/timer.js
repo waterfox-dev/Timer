@@ -114,7 +114,7 @@ function play()
     playButton.innerHTML = "<i class='fa-solid fa-pause'></i>"
 
 
-    let run = setInterval(()=>{
+    run = setInterval(()=>{
         if(state == 'running')
         {
             addSecond(-1);
