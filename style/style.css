@@ -71,11 +71,11 @@ h1
 
 #timerSetting > .playButton
 {
-    background-color:#c42b2b;
     border: none;
     height: 100px;
     width: 100px;
-    color: #DEDEDE;
+    color: black;
+    background-color: #dedede;
     font-family: 'Fira Code', monospace;
     font-size: 20px;
     border-radius: 50%;
