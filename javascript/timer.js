@@ -88,7 +88,7 @@ function addSecond(addingSecond)
 
 /**
  * Set second to the counter
- * @param {*} s second value
+ * @param {int} s second value
  */
 function setSecond(s)
 {
