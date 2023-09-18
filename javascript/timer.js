@@ -41,7 +41,7 @@ function secondToDuration(second)
 {
     const textMinutes = Math.floor(second / 60);
     const textSeconds = second - textMinutes * 60;
-    return formatHour(textMinutes, '0', 2) + ':' + formatHour(textSeconds, '0', 2);
+    return formatHour(textMinutes, '', 3) + ':' + formatHour(textSeconds, '0', 2);
 }
 
 /**
