@@ -80,14 +80,17 @@ h1
     font-size: 20px;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.6s;
 }
 
 
 #timerSetting > .playButton:hover
 {
-    color: black;
-    background-color: #dedede;
+    color: #dedede;
+    background-color: transparent;
+    border-color: #DEDEDE;
+    border-width: 2px;
+    border-style: solid;
 }
 
 
@@ -102,14 +105,17 @@ h1
     font-family: 'Fira Code', monospace;
     border-radius: 0.5em;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.6s;
 
 }
 
 #timerSetting > .configButton:hover
 {
-    background-color:#DEDEDE;
-    color: black;
+    color: #dedede;
+    background-color: transparent;
+    border-color: #DEDEDE;
+    border-width: 2px;
+    border-style: solid;
 }
 
 
