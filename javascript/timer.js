@@ -9,6 +9,7 @@ let configButton = document.getElementById('configButton');
 let timerConfig = document.getElementById('timerConfig');
 let sliderWorkLabel = document.getElementById('sliderWorkLabel'); 
 let sliderPauseLabel = document.getElementById('sliderPauseLabel');
+let notifAuthButton = document.getElementById('notifAuth');
 
 //---Internal variable---
 let second = 0;
@@ -16,6 +17,7 @@ let state = 'paused';
 let workState = 'working';
 let workDuration = 1500; 
 let pauseDuration = 300;
+let notifAuth;
 let run;
 
 //---Function---
@@ -46,7 +48,7 @@ function secondToDuration(second)
 
 /**
  * Add a number of seconds to the counter
- * @param {*} addingSecond the number of seconds
+ * @param {int} addingSecond the number of seconds
  */
 function addSecond(addingSecond)
 {
@@ -59,7 +61,10 @@ function addSecond(addingSecond)
             workingText.style.textDecoration = 'none';
             document.body.style.backgroundColor  = '#BBA36C';
             workState = 'pausing';
-            sendNotification('Pause time', `You are on break for the next ${pauseDuration/60} minutes`)
+            if(notifAuth == true)
+            {
+                sendNotification('Pause time', `You are on break for the next ${pauseDuration/60} minutes`)
+            }
             setSecond(pauseDuration);
         }
         else if(workState == 'pausing')
@@ -68,7 +73,10 @@ function addSecond(addingSecond)
             workingText.style.textDecoration = 'underline';
             document.body.style.backgroundColor  = '#C15151';
             workState = 'working';
-            sendNotification('Pause time', `You are on work for the next ${workDuration/60} minutes`)
+            if(notifAuth == true)
+            {
+                sendNotification('Work time', `You are on work for the next ${workDuration/60} minutes`);
+            }
             setSecond(workDuration);
         }
     }
@@ -90,8 +98,8 @@ function setSecond(s)
 
 /**
  * Send a notificationt to the client OS
- * @param {*} title the title of the notification
- * @param {*} text the text body of the notification
+ * @param {string} title the title of the notification
+ * @param {string} text the text body of the notification
  */
 function sendNotification(title, text)
 {
@@ -106,6 +114,7 @@ function sendNotification(title, text)
         }
     });
 }
+
 /**
  * Launch the counter
  */
@@ -131,7 +140,7 @@ function reset()
     setSecond(workDuration);
     
     sliderWorkLabel.innerHTML = `Working Time (${workDuration / 60} min) : `;
-    sliderPauseLabel.innerHTML = `Working Time (${pauseDuration / 60} min) : `;
+    sliderPauseLabel.innerHTML = `Pausing Time (${pauseDuration / 60} min) : `;
 
     workingText.style.textDecoration = 'underline';
     pausingText.style.textDecoration = 'none';
@@ -166,11 +175,24 @@ pauseInput.addEventListener('input', (event) => {
     reset();
 });
 
-configButton.addEventListener('click', () =>{
+configButton.addEventListener('click', () => {
     timerConfig.hidden = !timerConfig.hidden;
 });
 
+notifAuthButton.addEventListener('change', () => {
+    notifAuth = !notifAuth
+})
+
 //---Running first automation---
+if(notifAuthButton.value === "on")
+{
+    notifAuth = false;
+}
+else 
+{
+    notifAuth = true;
+}
+
 if(localStorage.getItem('pomWorkDur'))
 {
     workDuration = parseInt(localStorage.getItem('pomWorkDur'));
