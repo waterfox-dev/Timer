@@ -154,13 +154,13 @@ playButton.addEventListener('click', () =>
     }
 })
 
-workInput.addEventListener('change', (event) => {
+workInput.addEventListener('input', (event) => {
     workDuration = event.target.value * 60;
     localStorage.setItem('pomWorkDur', event.target.value * 60);
     reset();
 });
 
-pauseInput.addEventListener('change', (event) => {
+pauseInput.addEventListener('input', (event) => {
     pauseDuration = event.target.value * 60;
     localStorage.setItem('pomPauseDur', event.target.value * 60);
     reset();

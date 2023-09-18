@@ -1,38 +1,38 @@
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Pomodoro Timer</title>
-            <link rel="stylesheet" href="./style/style.css">
-            <script src="https://kit.fontawesome.com/509547751b.js" crossorigin="anonymous"></script>
-        </head>
-        <body>
-            <h1><strong>Pomodoro Timer</strong></h1>
-            <div id="statut">
-                <p id="working">Working</p>
-                <p>&nbsp;·&nbsp; </p>
-                <p id="pausing">Pausing</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pomodoro Timer</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <script src="https://kit.fontawesome.com/509547751b.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1><strong>Pomodoro Timer</strong></h1>
+        <div id="statut">
+            <p id="working">Working</p>
+            <p>&nbsp;·&nbsp; </p>
+            <p id="pausing">Pausing</p>
+        </div>
+        <div id="timer">
+            <div id="timerCircle">
+                <p id="timerTime">00:00</p>
             </div>
-            <div id="timer">
-                <div id="timerCircle">
-                    <p id="timerTime">00:00</p>
-                </div>
+        </div>
+        <div id="timerSetting">
+            <button class="playButton" id="playButton"><p class="fa-solid fa-play"></p></button>
+            <br>
+            <button class="configButton" id="configButton">Config Timer</button>
+        </div>
+        <div id="timerConfig" hidden>
+            <div id="workConfig" class="configDiv">
+                <label for="workInput" id="sliderWorkLabel">Working Time (min) : </label>
+                <input id="workInput" class="timeConfig" type="range" min="1" max="180">
             </div>
-            <div id="timerSetting">
-                <button class="playButton" id="playButton"><p class="fa-solid fa-play"></p></button>
-                <br>
-                <button class="configButton" id="configButton">Config Timer</button>
+            <div id="pauseConfig" class="configDiv">
+                <label for="pauseInput" id="sliderPauseLabel">Pausing Time (min) : </label>
+                <input id="pauseInput" class="timeConfig" type="range" min="1" max="180">
             </div>
-            <div id="timerConfig" hidden>
-                <div id="workConfig" class="configDiv">
-                    <label for="workInput" id="sliderWorkLabel">Working Time (min) : </label>
-                    <input id="workInput" class="timeConfig" type="range" min="1" max="180">
-                </div>
-                <div id="pauseConfig" class="configDiv">
-                    <label for="pauseInput" id="sliderPauseLabel">Pausing Time (min) : </label>
-                    <input id="pauseInput" class="timeConfig" type="range" min="1" max="180">
-                </div>
-            </div>
-            <script src="./javascript/timer.js"></script>
-        </body>
-    </html>
+        </div>
+        <script src="./javascript/timer.js"></script>
+    </body>
+</html>
