@@ -1,91 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-body
-{
+/* Styles généraux */
+body {
     background-color: #c15151;
     font-family: 'Fira Code', monospace;
     color: #DEDEDE;
+    margin: 0;
+    padding: 0;
 }
 
-h1
-{
+h1 {
     text-align: center;
-    font-size: 55px;
+    font-size: 6vh;
 }
 
-#statut
-{
+/* Media Query pour les téléphones */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 5vh;
+    }
+}
+
+#statut {
     text-align: center;
 }
 
-#statut > p
-{
+#statut > p {
     display: inline;
-    font-size: 30px;
+    font-size: 3vh;
 }
 
-#timer
-{
-    margin-top: 3%;
+#timer {
+    margin-top: 3vh;
     text-align: center;
 }
 
-#timerCircle
-{
-    height: 300px;
-    width: 300px;
+#timerCircle {
+    height: 30vh;
+    width: 30vh;
     border-radius: 50%;
     border-style: solid;
     margin: auto;
 }
 
-#timerTime
-{
-    margin-top: 42%;
-    font-size: 40px;
+#timerTime {
+    margin-top: 4vh;
+    font-size: 4vh;
 }
 
-#timerSetting
-{
+#timerSetting {
     text-align: center;
-    margin-top: 3%;
+    margin-top: 3vh;
 }
 
-#timerSetting > .timeButton
-{
-    background-color:#131313;
+#timerSetting > .timeButton {
+    background-color: #131313;
     border-style: solid;
-    border-width: 0.5px;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 1.2%;
-    padding-top: 1.2%;
+    border-width: 0.5vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-bottom: 1.2vh;
+    padding-top: 1.2vh;
     color: #DEDEDE;
     font-family: 'Fira Code', monospace;
-    font-size: 20px;
+    font-size: 2vh;
     border-radius: 1.2em;
     cursor: pointer;
-    
 }
 
-
-#timerSetting > .playButton
-{
+#timerSetting > .playButton {
     border: none;
-    height: 100px;
-    width: 100px;
+    height: 10vh;
+    width: 10vh;
     color: black;
     background-color: #dedede;
     font-family: 'Fira Code', monospace;
-    font-size: 20px;
+    font-size: 2vh;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.6s;
 }
 
-
-#timerSetting > .playButton:hover
-{
+#timerSetting > .playButton:hover {
     color: #dedede;
     background-color: transparent;
     border-color: #DEDEDE;
@@ -93,24 +89,20 @@ h1
     border-style: solid;
 }
 
-
-#timerSetting > .configButton
-{
+#timerSetting > .configButton {
     border: none;
-    margin-top: 2%;
-    font-size: 25px;
-    padding: 15px;
+    margin-top: 2vh;
+    font-size: 2.5vh;
+    padding: 1.5vh;
     color: black;
     background-color: #dedede;
     font-family: 'Fira Code', monospace;
     border-radius: 0.5em;
     cursor: pointer;
     transition: 0.6s;
-
 }
 
-#timerSetting > .configButton:hover
-{
+#timerSetting > .configButton:hover {
     color: #dedede;
     background-color: transparent;
     border-color: #DEDEDE;
@@ -118,19 +110,16 @@ h1
     border-style: solid;
 }
 
-
-#timerConfig
-{
-    margin-top: 2%;
+#timerConfig {
+    margin-top: 2vh;
     text-align: center;
-    font-size: 25px;    
+    font-size: 2.5vh;
 }
 
-.timeConfig
-{
+.timeConfig {
     background-color: #c15151;
     color: #DEDEDE;
     border: none;
-    font-size: 20px;
+    font-size: 2vh;
     display: inline;
 }
