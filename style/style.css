@@ -50,7 +50,8 @@ h1 {
 
 #timerSetting {
     text-align: center;
-    margin-top: 3vh;
+    margin-top: 6vh;
+    margin-bottom: 0;
 }
 
 #timerSetting > .timeButton {
