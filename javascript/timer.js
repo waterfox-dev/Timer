@@ -57,8 +57,9 @@ function addSecond(addingSecond)
     {
         if(workState == 'working')
         {
-            pausingText.style.textDecoration = 'underline';
-            workingText.style.textDecoration = 'none';
+ 
+            pausingText.style.color = 'black';
+            workingText.style.color = '#DEDEDE';
             document.body.style.backgroundColor  = '#BBA36C';
             workState = 'pausing';
             if(notifAuth == true)
@@ -69,8 +70,8 @@ function addSecond(addingSecond)
         }
         else if(workState == 'pausing')
         {            
-            pausingText.style.textDecoration = 'none';
-            workingText.style.textDecoration = 'underline';
+            workingText.style.color = 'black'
+            pausingText.style.color = '#    DEDEDE';
             document.body.style.backgroundColor  = '#C15151';
             workState = 'working';
             if(notifAuth == true)
@@ -128,7 +129,7 @@ function play()
         {
             addSecond(-1);
         }
-    }, 1000);
+    }, 10);
 }
 
 /**
@@ -142,7 +143,8 @@ function reset()
     sliderWorkLabel.innerHTML = `Working Time (${workDuration / 60} min) : `;
     sliderPauseLabel.innerHTML = `Pausing Time (${pauseDuration / 60} min) : `;
 
-    workingText.style.textDecoration = 'underline';
+    workingText.style.color = 'black';
+
     pausingText.style.textDecoration = 'none';
     playButton.innerHTML = "<p class='fa-solid fa-play'></p>"
 }
