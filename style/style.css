@@ -40,12 +40,14 @@ h1 {
     width: 30vh;
     border-radius: 50%;
     border-style: solid;
+    vertical-align: middle;
     margin: auto;
 }
 
 #timerTime {
-    margin-top: 4vh;
+    vertical-align: 50%;
     font-size: 4vh;
+    margin-top: 42%;
 }
 
 #timerSetting {
